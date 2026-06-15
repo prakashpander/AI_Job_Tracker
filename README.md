@@ -53,15 +53,15 @@ Welcome to the **Job Application Tracker**—a premium, fully custom-themed deve
 1. Clone the repository and navigate to `/Backend`.
 2. Create your `.env` file:
    ```env
-   GROQ_API_KEY=gsk_xxxxxxxxxxxxxxxxxxxx
-   MONGO_URI=mongodb_xxxxxxxxxxxxxxxxxxxx
-   APP_NAME=APPLCATION_NAME
-   JWT_SECRET=jwt_xxxxxxxxxxxxxxxxxxxx
-   JWT_EXPIRES=EXPIRES_TIME
-   LOCAL_PORT=3000
-   LIVE_PORT=3000
-   FRONTEND_LIVE_URL=http://localhost:5173
-   FRONTEND_LOCAL_URL=http://localhost:5173
+GROQ_API_KEY=groq_api_key_here
+MONGO_URI=mongodb_connection_string_here
+APP_NAME=app_name
+JWT_SECRET=jwt_secret_here
+JWT_EXPIRES=7d
+LOCAL_PORT=3000
+LIVE_PORT=3000
+FRONTEND_LIVE_URL=http://localhost:5173
+FRONTEND_LOCAL_URL=http://localhost:5173
    ```
 3. Boot the server:
    ```bash
@@ -73,7 +73,7 @@ Welcome to the **Job Application Tracker**—a premium, fully custom-themed deve
 1. Navigate to `/Frontend`.
 2. Create your `.env` file:
    ```env
-   VITE_API_URL=http://localhost:3000/api
+   VITE_API_URL=LIVE_BACKEND_URL
    VITE_LOCAL_API_URL=http://localhost:3000/api
    ```
 3. Boot development server:
@@ -94,7 +94,7 @@ Welcome to the **Job Application Tracker**—a premium, fully custom-themed deve
 # =========================================================================
 
 # # Live Backend URL
-# VITE_API_URL=https://my-backend-url.onrender.com/api
+VITE_API_URL=LIVE_BACKEND_URL
 # =========================================================================
 ```
 
@@ -102,10 +102,8 @@ Welcome to the **Job Application Tracker**—a premium, fully custom-themed deve
 ```bash
 # =========================================================================
 
-# # Live Frontend URL
-  FRONTEND_LIVE_URL=https://ai-job-tracker-mu.vercel.app
-#
-# # Production Port
-# LIVE_PORT=3000
+# Live Frontend URL
+  FRONTEND_LIVE_URL=https://ai-job-tracker-mauve-omega.vercel.app
+
 # =========================================================================
 ```

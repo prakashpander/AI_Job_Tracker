@@ -184,10 +184,10 @@ What would you like help with today?`
   // };
 
   const quickPrompts = [
-    { label: 'Cover letter 📝', prompt: 'Stripe entry-level frontend developer job ke liye ek solid Hinglish cover letter bana do, short aur professional.' },
-    { label: 'Interview prep 🎯', prompt: 'Mera kal React developer ka round hai. Common junior questions and tips do.' },
-    { label: 'Resume tips 👤', prompt: 'Project section me visual hierarchy aur strong verbs kaise dalein?' },
-    { label: 'Salary negotiate 💵', prompt: '6 LPA standard offer ko 8 LPA tak negotiate karne ke liye kya keywords bole HR se?' }
+{ label: 'Cover Letter 📝', prompt: 'Write a solid cover letter for a Stripe entry-level frontend developer job, keep it short and professional.' },
+{ label: 'Interview Prep 🎯', prompt: 'I have a React developer round tomorrow. Give me common junior-level questions and preparation tips.' },
+{ label: 'Resume Tips 👤', prompt: 'How to add visual hierarchy and strong action verbs in the project section of my resume?' },
+{ label: 'Salary Negotiate 💵', prompt: 'What keywords should I use with HR to negotiate a standard 6 LPA offer up to 8 LPA?' }
   ];
 
   return (

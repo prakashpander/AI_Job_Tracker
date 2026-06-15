@@ -224,7 +224,7 @@ const Applications = () => {
         <div>
           <button
             onClick={openAddModal}
-            className="btn-glow flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#7c3aed] to-[#a78bfa] px-5 py-3 font-sans text-sm font-bold text-white shadow-lg sm:w-auto"
+            className="btn-glow flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#7c3aed] to-[#a78bfa] px-5 py-3 font-sans text-sm font-bold text-white shadow-lg sm:w-auto cursor-pointer"
           >
             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 4v16m8-8H4" />
@@ -258,7 +258,7 @@ const Applications = () => {
             <button
               key={opt}
               onClick={() => setActiveFilter(opt)}
-              className={`rounded-xl border px-4 py-2 font-sans text-xs font-semibold tracking-wide transition-all duration-200 ${activeFilter === opt
+              className={`rounded-xl border px-4 py-2 font-sans text-xs font-semibold tracking-wide transition-all duration-200 cursor-pointer ${activeFilter === opt
                 ? 'border-[#7c3aed] bg-[#7c3aed]/10 text-[#a78bfa]'
                 : 'border-card-border bg-black/10 text-[#9ca3af] hover:border-[#666] hover:text-white'
                 }`}
@@ -293,7 +293,7 @@ const Applications = () => {
                   <div className="flex gap-1.5 opacity-60 transition-opacity group-hover:opacity-100">
                     <button
                       onClick={() => openEditModal(job)}
-                      className="rounded-lg bg-black/30 p-1.5 text-[#9ca3af] hover:bg-white/5 hover:text-[#a78bfa]"
+                      className="rounded-lg bg-black/30 p-1.5 text-[#9ca3af] hover:bg-white/5 hover:text-[#a78bfa] cursor-pointer"
                       title="Edit application"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -302,7 +302,7 @@ const Applications = () => {
                     </button>
                     <button
                       onClick={() => handleDelete(job._id)}
-                      className="rounded-lg bg-black/30 p-1.5 text-rose-400/80 hover:bg-rose-500/10 hover:text-rose-400"
+                      className="rounded-lg bg-black/30 p-1.5 text-rose-400/80 hover:bg-rose-500/10 hover:text-rose-400 cursor-pointer"
                       title="Delete application"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -406,7 +406,7 @@ const Applications = () => {
               </h2>
               <button
                 onClick={() => setIsModalOpen(false)}
-                className="rounded-lg p-1 text-[#9ca3af] hover:bg-white/5 hover:text-white"
+                className="rounded-lg p-1 text-[#9ca3af] hover:bg-white/5 hover:text-white cursor-pointer"
               >
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -524,13 +524,13 @@ const Applications = () => {
                 <button
                   type="button"
                   onClick={() => setIsModalOpen(false)}
-                  className="rounded-xl border border-card-border px-4 py-2 font-sans text-xs font-semibold text-[#9ca3af] hover:bg-white/5 hover:text-white"
+                  className="rounded-xl border border-card-border px-4 py-2 font-sans text-xs font-semibold text-[#9ca3af] hover:bg-white/5 hover:text-white cursor-pointer"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="rounded-xl bg-gradient-to-r from-[#7c3aed] to-[#a78bfa] px-4 py-2 font-sans text-xs font-bold text-white shadow shadow-[#7c3aed]/40"
+                  className="rounded-xl bg-gradient-to-r from-[#7c3aed] to-[#a78bfa] px-4 py-2 font-sans text-xs font-bold text-white shadow shadow-[#7c3aed]/40 cursor-pointer"
                 >
                   {isEditing ? 'Save Changes' : 'Add Application'}
                 </button>

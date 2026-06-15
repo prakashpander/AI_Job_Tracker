@@ -1,0 +1,96 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Syne", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  
+  --color-bg-dark: #0a0a0f;
+  --color-sidebar-dark: #0d0d18;
+  --color-primary-accent: #7c3aed;
+  --color-secondary-accent: #a78bfa;
+  --color-text-primary: #e8e8f0;
+  --color-text-muted: #9ca3af;
+  --color-card-bg: rgba(255, 255, 255, 0.03);
+  --color-card-border: rgba(255, 255, 255, 0.07);
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #7c3aed;
+}
+
+/* Page slide-up transition */
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-up {
+  animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Stat card hover transition */
+.stat-card-transition {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.stat-card-transition:hover {
+  transform: translateY(-3px);
+  border-color: rgba(124, 58, 237, 0.3);
+  box-shadow: 0 10px 25px -5px rgba(124, 58, 237, 0.1), 0 8px 10px -6px rgba(124, 58, 237, 0.1);
+}
+
+/* Button glow effect */
+.btn-glow {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+}
+.btn-glow:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 0 15px rgba(124, 58, 237, 0.5);
+  filter: brightness(1.1);
+}
+
+/* Funnel progress bar smooth width */
+.progress-bar-fill {
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Loading dot animation */
+@keyframes dotPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.animate-dot-pulse-1 {
+  animation: dotPulse 1.2s infinite ease-in-out;
+}
+.animate-dot-pulse-2 {
+  animation: dotPulse 1.2s infinite ease-in-out;
+  animation-delay: 0.2s;
+}
+.animate-dot-pulse-3 {
+  animation: dotPulse 1.2s infinite ease-in-out;
+  animation-delay: 0.4s;
+}

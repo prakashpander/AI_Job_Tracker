@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import axiosInstance from '../components/AxiosInspector.jsx';
 
@@ -10,6 +10,8 @@ const Applications = () => {
   const [loading, setLoading] = useState(true);
   const [searchTerm, setSearchTerm] = useState('');
   const [activeFilter, setActiveFilter] = useState('All');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isDeleting, setIsDeleting] = useState(null);
 
   // Modal states
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -111,6 +113,8 @@ const Applications = () => {
   // Submit handler with direct Axios calls
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    if (isSubmitting) return;
+    setIsSubmitting(true);
     setFormError('');
 
     if (!formData.company || !formData.role) {
@@ -155,20 +159,28 @@ const Applications = () => {
         setFormError(err.response?.data?.message || 'Something went wrong. Please check your data.');
       }
     }
+    finally {
+    setIsSubmitting(false); // ← yeh add kar
+  }
   };
 
   // Delete handler with direct Axios call
   const handleDelete = async (id) => {
     if (window.confirm('Are you sure you want to delete this job application?')) {
+       setIsDeleting(id);
       try {
         // Direct Axios DELETE request
         const res = await axiosInstance.delete(`/application/delete/${id}`);
         if (res.data.success) {
           fetchApplications();
         }
-      } catch (err) {
+      } 
+      catch (err) {
         console.error('Failed to delete job:', err);
       }
+      finally {
+      setIsDeleting(null);
+    }
     }
   };
 
@@ -302,7 +314,8 @@ const Applications = () => {
                     </button>
                     <button
                       onClick={() => handleDelete(job._id)}
-                      className="rounded-lg bg-black/30 p-1.5 text-rose-400/80 hover:bg-rose-500/10 hover:text-rose-400 cursor-pointer"
+                       disabled={isDeleting === job._id}
+                      className={`rounded-lg bg-black/30 p-1.5 text-rose-400/80 hover:bg-rose-500/10 hover:text-rose-400 cursor-pointer  ${isDeleting === job._id ? 'opacity-50 cursor-not-allowed' : ''}`}
                       title="Delete application"
                     >
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -530,9 +543,10 @@ const Applications = () => {
                 </button>
                 <button
                   type="submit"
-                  className="rounded-xl bg-gradient-to-r from-[#7c3aed] to-[#a78bfa] px-4 py-2 font-sans text-xs font-bold text-white shadow shadow-[#7c3aed]/40 cursor-pointer"
+                  disabled={isSubmitting}
+                  className={`rounded-xl bg-gradient-to-r from-[#7c3aed] to-[#a78bfa] px-4 py-2 font-sans text-xs font-bold text-white shadow shadow-[#7c3aed]/40 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : 'cursor-pointer'}`}
                 >
-                  {isEditing ? 'Save Changes' : 'Add Application'}
+                  {isSubmitting ? 'Saving...' : isEditing ? 'Save Changes' : 'Add Application'}
                 </button>
               </div>
             </form>

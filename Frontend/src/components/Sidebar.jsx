@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
@@ -80,7 +80,7 @@ const Sidebar = ({ isOpen, onClose }) => {
                 className={({ isActive }) =>
                   `flex items-center gap-3 rounded-xl px-4 py-3 font-sans text-sm font-medium transition-all duration-200 ${isActive
                     ? 'bg-gradient-to-r from-[rgba(124,58,237,0.15)] to-transparent text-[#a78bfa] border-l-2 border-[#7c3aed] shadow-[inset_1px_0_0_rgba(124,58,237,0.2)]'
-                    : 'text-[#9ca3af] hover:bg-white/5 hover:text-white'
+                    : 'text-[#9ca3af] hover:bg-white/5 hover:text-white' 
                   }`
                 }
               >

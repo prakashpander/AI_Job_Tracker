@@ -5,8 +5,8 @@ let connectDb = () => {
         .then(() => {
             console.log("Database Connected Successfully...");
         })
-        .catch(() => {
-            console.log("Database Connection Failed");
+        .catch((error) => {
+            console.log("Database Connection Failed = ",error);
         })
 }
 

@@ -203,7 +203,7 @@ What would you like help with today?`
               AI Career Assistant
             </h2>
             <span className="font-mono text-[10px] text-emerald-400">
-              llama-3.3-70b-versatile
+              openai/gpt-oss-20b
             </span>
           </div>
         </div>

@@ -64,7 +64,7 @@ ${applicationsContext}
 `;
 
   const completion = await groq.chat.completions.create({
-    model: "gpt-oss-20b",
+    model: "openai/gpt-oss-20b",
     messages: [
       { role: "system", content: systemPrompt },
       { role: "user", content: message },
